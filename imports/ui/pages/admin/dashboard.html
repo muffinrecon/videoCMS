@@ -1,0 +1,29 @@
+<template name="admin_Dashboard">
+    <div class="section">
+        <div class="container">
+            <h1>Dashboard</h1>
+            <a class="waves-effect waves-light btn" href="/admin/shows/create">Create Show</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                {{#each allShows }}
+                    <div class="col s6 m3">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{image}}">
+                                <span class="card-title">{{title}}</span>
+                                <a class="btn-floating btn-small halfway-fab waves-effect waves-light red delete"><i class="material-icons">delete</i></a>
+                            </div>
+                            <div class="card-action">
+                                <a href="#" class="episodes">Episodes</a>
+                                <a href="#" class="edit">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

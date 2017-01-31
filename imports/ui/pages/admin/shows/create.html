@@ -1,0 +1,30 @@
+<template name="create_Show">
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <h1>New Show</h1>
+            </div>
+            <form class="col s12" id="createShowForm">
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="title" name="title" type="text">
+                        <label for="title">Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="image" name="image" type="text">
+                        <label for="image">Image URL</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <textarea id="description" name="description" class="materialize-textarea"></textarea>
+                        <label for="description">Description/Synopsis</label>
+                    </div>
+                </div>
+                <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Create show</button>
+            </form>
+        </div>
+    </section>
+</template>

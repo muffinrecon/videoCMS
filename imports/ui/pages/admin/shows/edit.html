@@ -1,0 +1,32 @@
+<template name="edit_Show">
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <h1>Edit Show</h1>
+            </div>
+            <form class="col s12" id="editShowForm">
+                <input type="hidden" name="_id" value="{{thisShow._id}}">
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="title" value="{{thisShow.title}}" name="title" type="text">
+                        <label for="title" class="active">Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="image" value="{{thisShow.image}}" name="image" type="text">
+                        <label for="image" class="active">Image URL</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <textarea id="description" name="description" class="materialize-textarea">{{thisShow.description}}</textarea>
+                        <label for="description" class="active">Description/Synopsis</label>
+                    </div>
+                </div>
+                <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">check</i>Save</button>
+                <button type="button" class="waves-effect waves-light btn red cancel"><i class="material-icons left">input</i>Cancel</button>
+            </form>
+        </div>
+    </section>
+</template>

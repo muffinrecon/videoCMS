@@ -1,0 +1,37 @@
+<template name="App_body">
+    {{#if Template.subscriptionsReady}}
+        <div class="navbar-fixed">
+            <nav>
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="/" class="brand-logo">Fancy Anime</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                            {{#if currentUser }}
+                                <ul id="dropdown1" class="dropdown-content">
+                                    <li><a href="#!">Account</a></li>
+                                    <li><a href="#!">Bookmarks</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/logout">Logout</a></li>
+                                </ul>
+                                <ul class="right hide-on-med-and-down">
+                                    {{#if userIsAdmin}}
+                                        <li class="{{isActivePath regex='^\\/admin'}}"><a href="/admin">Administrator</a></li>
+                                    {{/if}}
+                                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ currentUser.username }}<i class="material-icons right">arrow_drop_down</i></a></li>
+                                </ul>
+                            {{else}}
+                                <ul class="right hide-on-med-and-down">
+                                    <li class="{{isActiveRoute 'join'}}"><a href="/join" >Sign Up</a></li>
+                                    <li class="{{isActiveRoute 'signin'}}" ><a href="/login">Login</a></li>
+                                </ul>
+                            {{/if}}
+                    </div>
+                </div>
+            </nav>
+        </div>
+        {{> Template.dynamic template=main}}
+        {{> Template.dynamic template=modal}}
+    {{else}}
+        {{> App_loading}}
+    {{/if}}
+</template>

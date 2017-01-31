@@ -1,0 +1,45 @@
+<template name="app_rootRedirector">
+    <div class="parallax-container teal lighten-5">
+        <!--<div class="parallax"><img src="images/background.png"></div>-->
+        <div class="container">
+            <h1 class="center-align strong-title">Anime for everyone.</h1>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12 m6 offset-m3">
+                        <input id="icon_prefix" type="text" class="validate white">
+                        <label for="icon_prefix">
+                            <i class="material-icons tiny">search</i>
+                            Search for anime...
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <h4 class="light">Recent Anime</h4>
+            </div>
+            <div class="row">
+                {{#each allShows}}
+                    <div class="col s6 m3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="{{image}}">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">{{title}}<i class="material-icons right">more_vert</i></span>
+                                <p><a href="#">This is a link</a></p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Synopsis<i class="material-icons right">close</i></span>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
